@@ -69,4 +69,6 @@ Then you need to adjust the IP of the network you are using as your local networ
       private static String ip = "yourip";
       private static String username = "yourusername";
       private static String password = "yourpassword";
-
+#Note:
+- The default admin account is: admin/123. You can only edit this account by editing the code in the Login section
+- In some cases, the clone may fail. Downloading the ZIP may fix this. 

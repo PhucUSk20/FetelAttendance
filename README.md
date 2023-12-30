@@ -71,4 +71,5 @@ Then you need to adjust the IP of the network you are using as your local networ
       private static String password = "yourpassword";
 #Note:
 - The default admin account is: admin/123. You can only edit this account by editing the code in the Login section
-- In some cases, the clone may fail. Downloading the ZIP may fix this. 
+- In some cases, the clone may fail. Downloading the ZIP may fix this.
+- You may get a CMakeLists.txt to exist error. To fix this error you need to copy the openCV folder to the corresponding path.

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@drawable/a45"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
+        tools:targetApi="31">
+        <activity
+            android:name=".UITeacher.StudentListActivityTeacher"
+            android:exported="false" />
+        <activity
+            android:name=".UITeacher.UI_Teacher"
+            android:exported="false"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".NavigationDrawer.SettingsActivity"
+            android:exported="false"
+            android:label="@string/title_activity_settings" />
+        <activity
+            android:name=".UIAdmin.UI_Admin"
+            android:exported="true"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".UIAdmin.StudentListActivityAdmin"
+            android:exported="true" />
+        <activity
+            android:name=".SQLServer.SQLConnection"
+            android:exported="true" />
+        <activity
+            android:name=".UICommon.ClassAddActivityForAdmin_Teacher"
+            android:exported="true" />
+        <activity
+            android:name=".UITeacher.ImageProcesser"
+            android:exported="false" />
+        <activity
+            android:name=".UIStudent.RegisterActivityForStudent"
+            android:exported="false" />
+        <activity
+            android:name=".UIAdmin.RegisterActivityForAdmin"
+            android:exported="false" />
+        <activity
+            android:name=".UITeacher.CameraProcesser"
+            android:exported="false" />
+        <activity
+            android:name=".UITeacher.ExportListByDate"
+            android:exported="false" />
+        <activity
+            android:name=".UITeacher.AttendListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".UITeacher.ExportListByClass"
+            android:exported="false" />
+        <activity
+            android:name=".Login.LecturerLogin"
+            android:exported="false" />
+        <activity
+            android:name=".Login.StudentLogin"
+            android:exported="false" />
+        <activity
+            android:name=".Login.ForgotPassword"
+            android:exported="false" />
+        <activity
+            android:name=".Login.LoginDialog"
+            android:exported="false" />
+        <activity
+            android:name=".Login.SignUp_Teacher"
+            android:exported="false" />
+        <activity
+            android:name=".Login.SignUp_Student"
+            android:exported="false" />
+        <activity
+            android:name=".UIStudent.StudentRegisterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".UIStudent.SearchBarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".UIStudent.UI_Student"
+            android:exported="false"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".UIStudent.StudentListActivityStudent"
+            android:exported="false" />
+        <activity
+            android:name=".Login.AdminLogin"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

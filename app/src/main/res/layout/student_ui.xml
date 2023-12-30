@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- TextView: "Tham gia 1 lớp học mới" -->
+    <TextView
+        android:id="@+id/textViewJoinClass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tham gia 1 lớp học mới"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp" />
+
+    <!-- SearchView: Thanh tìm kiếm -->
+    <SearchView
+        android:id="@+id/searchViewClasses"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textViewJoinClass"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:queryHint="Nhập tên lớp học để tìm kiếm"
+        android:iconifiedByDefault="false" />
+
+    <!-- RecyclerView: Hiển thị các lớp học đã tham gia -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewJoinedClasses"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/searchViewClasses"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp" />
+
+</RelativeLayout>

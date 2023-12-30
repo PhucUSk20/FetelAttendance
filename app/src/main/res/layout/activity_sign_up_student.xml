@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Login.SignUp_Teacher">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/logoImageView"
+            android:layout_width="310dp"
+            android:layout_height="200dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/student_logo"
+            android:layout_marginBottom="30dp"/>
+        <TextView
+            android:id="@+id/textViewBelowImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Student"
+            android:textSize="30dp"
+            android:textColor="@color/black"
+            android:layout_below="@id/logoImageView"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"/>
+
+
+        <EditText
+            android:id="@+id/username_signup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:ems="15"
+            android:hint="Username"
+            android:drawableStart="@drawable/baseline_person_24"
+            android:drawableLeft="@drawable/baseline_person_24"
+            android:padding="5dp"
+            android:textColorHint="@color/black"
+            android:textSize="20dp"/>
+
+        <TextView
+            android:id="@+id/check_user"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginRight="20dp"
+            android:textColor="#EC1B0C"
+            android:textSize="15dp"/>
+        <EditText
+            android:id="@+id/code_student"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="15"
+            android:hint="Code Student"
+            android:inputType="textEmailAddress"
+            android:drawableStart="@drawable/baseline_email_24"
+            android:drawableLeft="@drawable/baseline_email_24"
+            android:padding="5dp"
+            android:textColorHint="@color/black"
+            android:textSize="20dp"/>
+        <TextView
+            android:id="@+id/check_code"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginRight="20dp"
+            android:textColor="#EC1B0C"
+            android:textSize="15dp"/>
+        <EditText
+            android:id="@+id/email_signup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="15"
+            android:hint="Email"
+            android:inputType="textEmailAddress"
+            android:drawableStart="@drawable/baseline_email_24"
+            android:drawableLeft="@drawable/baseline_email_24"
+            android:padding="5dp"
+            android:textColorHint="@color/black"
+            android:textSize="20dp"/>
+
+        <TextView
+            android:id="@+id/check_email"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginRight="20dp"
+            android:textColor="#EC1B0C"
+            android:textSize="15dp"/>
+
+        <EditText
+            android:id="@+id/password_signup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="15"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:drawableStart="@drawable/baseline_lock_24"
+            android:drawableLeft="@drawable/baseline_lock_24"
+            android:padding="5dp"
+            android:textColorHint="@color/black"
+            android:textSize="20dp"/>
+
+        <TextView
+            android:id="@+id/check_pass"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginRight="20dp"
+            android:textColor="#E12012"
+            android:textSize="15dp"/>
+
+        <EditText
+            android:id="@+id/confirm_signup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="15"
+            android:hint="Retype Password"
+            android:inputType="textPassword"
+            android:drawableStart="@drawable/baseline_check_circle_24"
+            android:drawableLeft="@drawable/baseline_check_circle_24"
+            android:padding="5dp"
+            android:textColorHint="@color/black"
+            android:textSize="20dp"/>
+
+        <TextView
+            android:id="@+id/check_confirm"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="1dp"
+            android:textColor="#F11D0E"
+            android:textSize="15dp"/>
+
+        <Button
+            android:id="@+id/btnsignup"
+            android:layout_width="360dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="16dp"
+            android:text="Register"
+            android:textSize="18dp" />
+
+    </LinearLayout>
+
+</RelativeLayout>

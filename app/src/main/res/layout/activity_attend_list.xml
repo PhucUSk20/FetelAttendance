@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".UITeacher.AttendListActivity">
+
+    <!-- Add your existing views or UI elements here -->
+
+    <!-- Add the TextView to display the selected date -->
+    <TextView
+        android:id="@+id/textViewDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Selected Date"
+        android:textSize="18sp"
+        android:textColor="@android:color/black"/>
+
+    <!-- ListView to display your data -->
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:choiceMode="singleChoice"
+        android:layout_marginTop="16dp"/>
+
+    <!-- Button layout at the bottom -->
+    <RelativeLayout
+        android:id="@+id/buttonLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/listView">
+
+        <!-- Additional button aligned to the right of the export button -->
+        <Button
+            android:id="@+id/exportExcel"
+            android:layout_width="189dp"
+            android:layout_height="wrap_content"
+            android:text="Export Excel" />
+
+        <Button
+            android:id="@+id/exportJson"
+            android:layout_width="169dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/exportExcel"
+            android:text="Export Json" />
+    </RelativeLayout>
+</LinearLayout>

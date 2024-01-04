@@ -41,14 +41,14 @@ First, You need create DATABASE
 	Id NVARCHAR(255),
     );
     CREATE TABLE ATTENDANCE (
-	name_student NVARCHAR(255) ,
-	code_student NVARCHAR(255),
-	date_of_birth  DATE,
-	attendance_date DATE,
-	classId INT NOT NULL,
-        PRIMARY KEY (classid, code_student),
-	FOREIGN KEY (classId) REFERENCES CLASS(id),
-	FOREIGN KEY (code_student) REFERENCES STUDENT_LIST(code_student)
+    uniqueID INT IDENTITY(1,1) PRIMARY KEY,
+    name_student NVARCHAR(255) ,
+    code_student NVARCHAR(255),
+    date_of_birth  DATE,
+    attendance_date DATE,
+    classId INT NOT NULL,
+    FOREIGN KEY (classId) REFERENCES CLASS(id), 
+    FOREIGN KEY (code_student) REFERENCES STUDENT_LIST(code_student)
     );
  Insert data into the CLASS table.
 -----------------------------------------------------------------------

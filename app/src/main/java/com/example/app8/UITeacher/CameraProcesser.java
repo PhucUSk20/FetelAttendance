@@ -65,7 +65,6 @@ import java.util.List;
 
 public class CameraProcesser extends Activity implements CameraBridgeViewBase.CvCameraViewListener2 {
 
-    private static final String TAG="MainActivity";
     JavaCameraView javaCameraView;
     File caseFile;
     private static final int FACENET_INPUT_IMAGE_SIZE = 112;
@@ -135,15 +134,6 @@ public class CameraProcesser extends Activity implements CameraBridgeViewBase.Cv
         } else {
             switchCameraButton.setVisibility(View.GONE);
         }
-
-    //    addFaceButton.setOnClickListener(new View.OnClickListener() {
-    //        @Override
-    //        public void onClick(View v) {
-    //            isSavingFace = true;
-    //            showAddFaceDialog();
-    //        }
-    //    }
-        // );
         switchCameraButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -212,57 +202,6 @@ public class CameraProcesser extends Activity implements CameraBridgeViewBase.Cv
             javaCameraView.disableView();
             javaCameraView.enableView();
         }
-    }
-
-    private void showAddFaceDialog() {
-        AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
-        dialogBuilder.setTitle("Add Face");
-        EditText faceNameEditText = new EditText(this);
-
-        if (lastDetectedFace != null) {
-            // Tạo một ImageView mới để hiển thị hình ảnh khuôn mặt
-            ImageView faceImageView = new ImageView(this);
-            faceImageView.setImageBitmap(matToBitmap(lastDetectedFace));
-
-            // Tạo một layout để chứa ImageView và EditText
-            LinearLayout layout = new LinearLayout(this);
-            layout.setOrientation(LinearLayout.VERTICAL);
-            // Kiểm tra và loại bỏ các phần tử cũ trước khi thêm mới
-            if (layout.getChildCount() > 0) {
-                layout.removeAllViews();
-            }
-            layout.addView(faceImageView); // Thêm ImageView vào layout
-            layout.addView(faceNameEditText); // Thêm EditText vào layout
-
-            dialogBuilder.setView(layout); // Sét layout làm nội dung của AlertDialog
-        } else {
-            dialogBuilder.setView(faceNameEditText);
-        }
-
-        dialogBuilder.setPositiveButton("Save", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                String faceName = faceNameEditText.getText().toString();
-                float[] faceEmbeddings = getFaceEmbeddings(lastDetectedFace);
-                saveFaceInfo(faceName, faceEmbeddings);
-                isSavingFace = false; // Khi nhấn Save, đặt lại trạng thái
-                savePersonToDatabase(faceName,faceEmbeddings,convertImageToBytes(matToBitmap(lastDetectedFace)));
-                dialog.dismiss();
-            }
-        });
-
-        dialogBuilder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                isSavingFace = false; // Khi nhấn Cancel, đặt lại trạng thái
-                dialog.dismiss();
-            }
-        });
-
-        AlertDialog addFaceDialog = dialogBuilder.create();
-        addFaceDialog.show();
-        isSavingFace = true; // Khi mở dialog, đặt trạng thái là true
-
     }
 
     private float[] getFaceEmbeddings(Mat faceImage) {
@@ -494,31 +433,6 @@ public class CameraProcesser extends Activity implements CameraBridgeViewBase.Cv
         }
         return (float) Math.sqrt(distance);
     }
-
-    // Code interface with SQL Server
-    private void savePersonToDatabase(final String name, final float[] faceVector, final byte[] imageBytes) {
-        AsyncTask<Void, Void, Void> task = new AsyncTask<Void, Void, Void>() {
-            @Override
-            protected Void doInBackground(Void... voids) {
-                if (sqlConnection2 != null) {
-                    try {
-                        String insertQuery = "INSERT INTO Person (Name, FaceVector, ImageData) VALUES (?, ?, ?)";
-                        PreparedStatement preparedStatement = sqlConnection2.prepareStatement(insertQuery);
-                        preparedStatement.setString(1, name);
-                        byte[] faceVectorBytes = convertFloatArrayToBytes(faceVector);
-                        preparedStatement.setBytes(2, faceVectorBytes);
-                        preparedStatement.setBytes(3, imageBytes);
-                        preparedStatement.executeUpdate();
-                    } catch (SQLException e) {
-                        e.printStackTrace();
-                    }
-                }
-                return null;
-            }
-        };
-
-        task.execute();
-    }
     private void savePersonToAttendaceList(final String name) {
         AsyncTask<Void, Void, Void> task = new AsyncTask<Void, Void, Void>() {
             @Override
@@ -607,8 +521,13 @@ public class CameraProcesser extends Activity implements CameraBridgeViewBase.Cv
             public void run() {
                 if (sqlConnection2 != null) {
                     try {
-                        String selectQuery = "SELECT name_student, FaceVector FROM STUDENT_LIST";
+                        int classId = classID; // Lấy classId từ biến classID đã được khai báo trong class
+
+                        // Thay đổi câu lệnh SQL để sử dụng SELECT lồng
+                        String selectQuery = "SELECT name_student, FaceVector FROM STUDENT_LIST WHERE code_student IN (SELECT code_student FROM THAMGIA WHERE classid = ?)";
                         PreparedStatement preparedStatement = sqlConnection2.prepareStatement(selectQuery);
+                        preparedStatement.setInt(1, classId); // Gán giá trị classId vào câu lệnh truy vấn
+
                         ResultSet resultSet = preparedStatement.executeQuery();
 
                         while (resultSet.next()) {

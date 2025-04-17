@@ -2,6 +2,7 @@
 **Team size**: 3 members  
 **Roles**: Leader
 **Development time**: December 2023 – September 2024
+
 FETEL Attendance is a mobile application that manages classroom attendance using Google ML Kit, OpenCV's Haar Cascade, and FaceNet for face detection and recognition. Each class is managed by a lecturer account and stores student face data separately. Students register their facial data and are recognized in real-time through video streaming. The system supports three roles: Admin, Lecturer, and Student. Students join classes using a class code. Attendance data can be exported to Excel and JSON formats.
 
 ---

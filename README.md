@@ -1,5 +1,7 @@
 # 🤖 FETEL ATTENDANCE
-
+**Team size**: 3 members  
+**Roles**: Leader
+**Development time**: December 2023 – September 2024
 FETEL Attendance is a mobile application that manages classroom attendance using Google ML Kit, OpenCV's Haar Cascade, and FaceNet for face detection and recognition. Each class is managed by a lecturer account and stores student face data separately. Students register their facial data and are recognized in real-time through video streaming. The system supports three roles: Admin, Lecturer, and Student. Students join classes using a class code. Attendance data can be exported to Excel and JSON formats.
 
 ---
@@ -8,7 +10,7 @@ FETEL Attendance is a mobile application that manages classroom attendance using
 
 - [1. Database](#1-database)
   - [1.1 ER Diagram](#11-er-diagram)
-  - [1.2 Relational Model](#12-relational-model)
+  - [1.2 Relational Diagram](#12-relational-diagram)
   - [1.3 Tables](#13-tables)
   - [1.4 JDBC Connection](#14-jdbc-connection)
 - [2. AI Model (FaceNet)](#2-ai-model-facenet)
@@ -19,14 +21,15 @@ FETEL Attendance is a mobile application that manages classroom attendance using
   - [3.2 Lecturer Interface](#32-lecturer-interface)
   - [3.3 Admin Interface](#33-admin-interface)
 - [4. Technologies Used](#4-technologies-used)
-- [5. Team Information](#5-team-information)
+- [5. Demo](#5-demo)
 
 ---
 
 ## 1. Database
 
 ### 1.1 ER Diagram  
-![ER Diagram](https://imgur.com/FexTZSI.png)
+![ER Diagram](https://imgur.com/Ly4BVjq.png)
+
 
 ### 1.2 Relational Diagram
 ![Relational Model](https://imgur.com/Pk7hAXR.png)
@@ -100,12 +103,14 @@ FETEL Attendance is a mobile application that manages classroom attendance using
 
 ---
 
-## 5. Team Information
+## 5. Demo
 
-This is a final-year project developed at **University of Science - VNUHCM**  
-**Team size**: 3 members  
-**Roles**: Leader
-**Development time**: December 2023 – September 2024
+🎥 **Project Demo Video**  
+Click the link below to watch the full demonstration of the FETEL Attendance system in action, including facial registration, real-time recognition, and attendance management:
+
+[![Watch Demo on YouTube](https://img.youtube.com/vi/_pq62qO4UZc/0.jpg)](https://www.youtube.com/watch?v=_pq62qO4UZc)  
+➡️ [Watch on YouTube](https://www.youtube.com/watch?v=_pq62qO4UZc)
+
 
 
 # To install the PROJECT

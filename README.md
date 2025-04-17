@@ -1,3 +1,113 @@
+# 🤖 FETEL ATTENDANCE
+
+FETEL Attendance is a mobile application that manages classroom attendance using Google ML Kit, OpenCV's Haar Cascade, and FaceNet for face detection and recognition. Each class is managed by a lecturer account and stores student face data separately. Students register their facial data and are recognized in real-time through video streaming. The system supports three roles: Admin, Lecturer, and Student. Students join classes using a class code. Attendance data can be exported to Excel and JSON formats.
+
+---
+
+## 📌 Table of Contents
+
+- [1. Database](#1-database)
+  - [1.1 ER Diagram](#11-er-diagram)
+  - [1.2 Relational Model](#12-relational-model)
+  - [1.3 Tables](#13-tables)
+  - [1.4 JDBC Connection](#14-jdbc-connection)
+- [2. AI Model (FaceNet)](#2-ai-model-facenet)
+  - [2.1 Feature Extraction and Matching](#21-feature-extraction-and-matching)
+  - [2.2 General Workflow](#22-general-workflow)
+- [3. Application Interface](#3-application-interface)
+  - [3.1 Student Interface](#31-student-interface)
+  - [3.2 Lecturer Interface](#32-lecturer-interface)
+  - [3.3 Admin Interface](#33-admin-interface)
+- [4. Technologies Used](#4-technologies-used)
+- [5. Team Information](#5-team-information)
+
+---
+
+## 1. Database
+
+### 1.1 ER Diagram  
+![ER Diagram](https://imgur.com/FexTZSI.png)
+
+### 1.2 Relational Diagram
+![Relational Model](https://imgur.com/Pk7hAXR.png)
+
+### 1.3 Tables  
+- **Lecturers (giangvien)**  
+  ![giangvien table](https://imgur.com/vub6RoW.png)  
+- **Class**  
+  ![class table](https://imgur.com/W3b9rqZ.png)  
+- **Student List**  
+  ![student_list table](https://imgur.com/dVud0aH.png)  
+- **Participation (THAMGIA)**  
+  ![thamgia table](https://imgur.com/yYmhpdC.png)  
+- **Attendance**  
+  ![attendance table](https://imgur.com/IbInPsl.png)  
+
+### 1.4 JDBC Connection  
+![JDBC Connection](https://imgur.com/xl5Cikt.png)
+
+---
+
+## 2. AI Model (FaceNet)
+
+### 2.1 Feature Extraction and Matching  
+![Feature extraction and matching](https://imgur.com/uGDuEZt.png)
+
+### 2.2 General Workflow  
+![AI model workflow](https://imgur.com/OXRaFTl.png)
+
+---
+
+## 3. Application Interface
+
+### 3.1 Student Interface  
+- Profile setup  
+  ![Student profile setup](https://imgur.com/LYGp71e.png)  
+- Join class  
+  ![Student join class](https://imgur.com/bCSnN8T.png)  
+
+### 3.2 Lecturer Interface  
+- Dashboard  
+  ![Lecturer dashboard](https://imgur.com/hXGeEhw.png)  
+- Attendance via gallery, camera, or live stream  
+  ![Attendance via image options](https://imgur.com/ztRBmOa.png)  
+- Real-time multi-face recognition  
+  ![Multi-face attendance 1](https://imgur.com/8whQkBj.png)  
+  ![Multi-face attendance 2](https://imgur.com/mf6igWF.png)  
+- Export attendance (by date/class)  
+  ![Export by date/class](https://imgur.com/7JjN6EM.png)  
+- Export full class attendance  
+  ![Export full class](https://imgur.com/SMZ8wRO.png)  
+
+### 3.3 Admin Interface  
+- Create new class  
+  ![Create class](https://imgur.com/KYfXTsp.png)  
+- Delete students  
+  ![Delete students](https://imgur.com/vzrzfcV.png)  
+- Add student to class  
+  ![Add student](https://imgur.com/uHGHsdN.png)  
+
+---
+
+## 4. Technologies Used
+
+- **Face Recognition**: FaceNet
+- **Face Detection**: Google ML Kit, OpenCV (Haar Cascade)
+- **Mobile Platform**: Android (Java)
+- **Database**: Microsoft SQL Server
+- **Data Export**: Apache POI (Excel), Gson (JSON)
+- **Libraries**: OpenCV, JDBC
+
+---
+
+## 5. Team Information
+
+This is a final-year project developed at **University of Science - VNUHCM**  
+**Team size**: 3 members  
+**Roles**: Leader
+**Development time**: December 2023 – September 2024
+
+
 # To install the PROJECT
 First, You need create DATABASE
 -----------------------------------------------------------------------
